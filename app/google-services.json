@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "908439432140",
+    "project_id": "crud-produtos-android-baa95",
+    "storage_bucket": "crud-produtos-android-baa95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908439432140:android:e820a0aec94bc4a4ae8b69",
+        "android_client_info": {
+          "package_name": "br.com.dbserver.lista.retrofitcrudprodutos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "908439432140-ktgmpelael6ma8listu4d1rkml4hcrkt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQE20pzgPFecSyMzz_EfzCy6dDmF0O4H0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "908439432140-ktgmpelael6ma8listu4d1rkml4hcrkt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

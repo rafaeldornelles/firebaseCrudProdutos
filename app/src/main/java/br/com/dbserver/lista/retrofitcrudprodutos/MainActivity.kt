@@ -9,8 +9,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import br.com.dbserver.lista.retrofitcrudprodutos.adapter.ProdutoAdapter
+import br.com.dbserver.lista.retrofitcrudprodutos.firebase.ProdutoClientFirestore
 import br.com.dbserver.lista.retrofitcrudprodutos.model.Produto
-import br.com.dbserver.lista.retrofitcrudprodutos.retrofit.client.ProdutoClientApi
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 const val CHAVE_EXTRA_PRODUTO = "produto"
@@ -29,7 +29,8 @@ class MainActivity : AppCompatActivity(), ProdutoAdapter.OnProdutoClickListener 
     val fabAddProduto by lazy { findViewById<FloatingActionButton>(R.id.fab_adicionar_produto) }
     val produtos: MutableList<Produto> = ArrayList()
     val produtoAdapter = ProdutoAdapter(produtos, this)
-    val produtoClientApi = ProdutoClientApi()
+
+    val produtoClientFirestore = ProdutoClientFirestore()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,7 +78,7 @@ class MainActivity : AppCompatActivity(), ProdutoAdapter.OnProdutoClickListener 
             }
         }
 
-        produtoClientApi.inserir(produto, onSuccess, onFailure)
+        produtoClientFirestore.inserir(produto, onSuccess, onFailure)
     }
 
     fun editarProduto(produto: Produto){
@@ -97,7 +98,7 @@ class MainActivity : AppCompatActivity(), ProdutoAdapter.OnProdutoClickListener 
                 Toast.makeText(this, it, Toast.LENGTH_LONG)
             }
         }
-        produtoClientApi.alterar(produto.id, produto, onSuccess, onFailure)
+        produtoClientFirestore.alterar(produto.id!!, produto, onSuccess, onFailure)
     }
 
     fun removerProduto(produto: Produto){
@@ -115,7 +116,7 @@ class MainActivity : AppCompatActivity(), ProdutoAdapter.OnProdutoClickListener 
             }
         }
 
-        produtoClientApi.deletar(produto.id, onSuccess, onFailure)
+        produtoClientFirestore.deletar(produto.id!!, onSuccess, onFailure)
     }
 
     fun carregarProdutos(){
@@ -131,7 +132,7 @@ class MainActivity : AppCompatActivity(), ProdutoAdapter.OnProdutoClickListener 
                 Toast.makeText(this, it, Toast.LENGTH_LONG).show()
             }
         }
-        produtoClientApi.listar(onSuccess, onFailure)
+        produtoClientFirestore.listar(onSuccess, onFailure)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -27,9 +27,9 @@ class FormProdutoActivity : AppCompatActivity() {
 
         produto = intent.hasExtra(CHAVE_EXTRA_PRODUTO).let {
             intent.getParcelableExtra<Produto>(CHAVE_EXTRA_PRODUTO)
-        } ?: Produto(0, "", 0.0)
+        } ?: Produto(null, "", 0.0)
 
-        if (produto.id != 0){
+        if (produto.id != null){
             etNomeProduto.setText(produto.nome)
             etPrecoProduto.setText(String.format("%.2f", produto.preco))
         }
