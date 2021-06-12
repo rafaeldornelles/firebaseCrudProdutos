@@ -1,0 +1,29 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Smartphone Xiaomi Redmi Note 10",
+      "preco": 1539.16
+    },
+    {
+      "id": 2,
+      "nome": "Smartphone Apple iPhone 11 64GB iOS Camera Dupla",
+      "preco": 3898.99
+    },
+    {
+      "id": 3,
+      "nome": "Smartphone Samsung Galaxy A11 SM-A115M 64GB Androida",
+      "preco": 969
+    },
+    {
+      "id": 4,
+      "nome": "Smartphone Samsung Galaxy S20 FE SM-G780F 128GB Android",
+      "preco": 2294.1
+    },
+    {
+      "id": 6,
+      "nome": "jjj",
+      "preco": 98
+    }
+  ]
+}
