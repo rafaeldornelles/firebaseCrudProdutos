@@ -1,6 +1,7 @@
 package br.com.dbserver.lista.retrofitcrudprodutos
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -32,9 +33,20 @@ class MainActivity : AppCompatActivity(), ProdutoAdapter.OnProdutoClickListener 
 
     val produtoClientFirestore = ProdutoClientFirestore()
 
+    val userName: String by lazy{
+        getSharedPreferences(NOME_SHARED_PREFERENCES, Context.MODE_PRIVATE).run {
+            if (contains(CHAVE_USERNAME_PREFERENCE))
+                getString(CHAVE_USERNAME_PREFERENCE, null)?: "Anônimo"
+            else if (contains(CHAVE_EMAIL_PREFERENCE))
+                getString(CHAVE_EMAIL_PREFERENCE, null)?: "Anônimo"
+            else "Anônimo"
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        title = "Produtos"
+
+        title = "Bem vindo, $userName"
         setContentView(R.layout.activity_main)
 
         rvProdutos.adapter = produtoAdapter
