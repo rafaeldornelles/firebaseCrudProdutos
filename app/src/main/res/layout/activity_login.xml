@@ -39,6 +39,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ti_login_senha"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -61,14 +62,27 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/bt_login"
         style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Login"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@id/bt_cadastro"
-        android:layout_marginHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.977"
+        app:layout_constraintStart_toEndOf="@id/bt_login_google"
         app:layout_constraintTop_toBottomOf="@+id/ti_login_senha" />
+
+    <com.google.android.gms.common.SignInButton
+       android:id="@+id/bt_login_google"
+        android:layout_width="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintBottom_toBottomOf="@id/bt_login"
+        app:layout_constraintEnd_toStartOf="@id/bt_login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bt_login"
+        android:layout_marginRight="16dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/bt_cadastro"
@@ -78,6 +92,6 @@
         android:text="Cadastro"
         app:layout_constraintTop_toBottomOf="@id/bt_login"
         app:layout_constraintEnd_toEndOf="@id/bt_login"
-        app:layout_constraintStart_toStartOf="@id/bt_login"
+        app:layout_constraintStart_toStartOf="@id/bt_login_google"
         app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

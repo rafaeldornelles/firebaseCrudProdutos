@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "908439432140-6rcdsi64c6mr39arfltl9212r1cv4p8q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.dbserver.lista.retrofitcrudprodutos",
+            "certificate_hash": "a368eb743eb9702ae2906718555734dae892198a"
+          }
+        },
+        {
           "client_id": "908439432140-ktgmpelael6ma8listu4d1rkml4hcrkt.apps.googleusercontent.com",
           "client_type": 3
         }
